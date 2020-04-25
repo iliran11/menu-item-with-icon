@@ -28,8 +28,10 @@ function my_wp_nav_menu_objects($items, $args)
 
     // append icon
     if ($icon) {
-
-      $item->title .= ' <i class="fa fa-' . $icon . '"></i>';
+      write_log($item->title);
+      ob_start(); ?>
+      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">hii</li>
+<?php $item->title = ob_get_clean();
     }
   }
 
