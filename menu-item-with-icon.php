@@ -30,8 +30,10 @@ function my_wp_nav_menu_objects($items, $args)
     if ($icon) {
       write_log($item->title);
       ob_start(); ?>
-      <div class="liran-class">hello</div>
-      <span><?php echo $item->title ?></span>
+      <div class="menu-item-with-icon">
+        <div class="icon"><?php echo $icon ?></div>
+        <span><?php echo $item->title ?></span>
+      </div>
 <?php $item->title = ob_get_clean();
     }
   }

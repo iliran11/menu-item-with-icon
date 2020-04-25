@@ -1,3 +1,21 @@
-.liran-class {
-  color: red;
+.menu-item-with-icon {
+  display: flex;
+  align-items: center;
+}
+.menu-item-with-icon svg {
+  height: 100%;
+  width: 100%;
+}
+
+.menu-item-with-icon .icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-left: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .menu-item-with-icon path {
+    fill: black;
+  }
 }
