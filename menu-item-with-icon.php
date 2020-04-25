@@ -12,8 +12,8 @@ License: A "Slug" license name e.g. GPL2
 
 function wpdocs_register_plugin_styles()
 {
-  wp_register_style('menu-item-with-icon', plugins_url('style.css'));
-  wp_enqueue_style('menu-item-with-icon');
+  $plugin_url = plugin_dir_url(__FILE__);
+  wp_enqueue_style('menu-item-with-icon', $plugin_url . 'style.css');
 }
 // Register style sheet.
 
@@ -30,7 +30,8 @@ function my_wp_nav_menu_objects($items, $args)
     if ($icon) {
       write_log($item->title);
       ob_start(); ?>
-      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">hii</li>
+      <div class="liran-class">hello</div>
+      <span><?php echo $item->title ?></span>
 <?php $item->title = ob_get_clean();
     }
   }
